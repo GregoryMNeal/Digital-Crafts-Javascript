@@ -15,26 +15,19 @@ bad -> 10%
 */
 
 function tipAmount (total, los) {
-  console.log(total)
-  console.log(los)
-  if (los = 'good') {
+  var tip = 0;
+  if (los == 'good') {
     tip = total * .20;
   }
-    else if (los = 'fair') {
+    else if (los == 'fair') {
       tip = total * .15;
     }
-      else if (los = 'bad') {
+      else if (los == 'bad') {
         tip = total * .10;
       }
-        else {
-          tip = 0
-        }
   return tip;
 }
 
-t = tipAmount(10.00, 'good')
-console.log(t);
-t = tipAmount(10.00, 'fair')
-console.log(t);
-t = tipAmount(10.00, 'bad')
-console.log(t);
+console.log(tipAmount(10.00, 'good'));
+console.log(tipAmount(10.00, 'fair'));
+console.log(tipAmount(10.00, 'bad'));
