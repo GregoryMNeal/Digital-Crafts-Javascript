@@ -1,6 +1,4 @@
-/* Exercise 2
-
-Tip Calculator
+/* Tip Calculator
 
 Write a function tipAmount that is given the bill amount and the level of service (one of good, fair and poor) and returns the dollar amount for the tip. Based on:
 
