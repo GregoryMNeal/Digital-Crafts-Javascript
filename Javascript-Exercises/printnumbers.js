@@ -14,12 +14,26 @@ Write a function printNumbers which is given a start number and an end number. I
 9
 10
 
+Write two versions of the above function. One using a while loop and the other using a for loop.
+
 */
 
-function printNumbers (start, end) {
-  for (var number=start; number <= end; number++) {
-    console.log(number);
+function printNumbersWhile (start, end) {
+  n = start;
+  while (n <= end) {
+    console.log(n);
+    n++;
   }
 }
 
-printNumbers(1, 10);
+function printNumbersFor (start, end) {
+  for (var n=start; n <= end; n++) {
+    console.log(n);
+  }
+}
+
+
+start = 1;
+end = 10;
+printNumbersWhile(start, end);
+printNumbersFor(start, end);
