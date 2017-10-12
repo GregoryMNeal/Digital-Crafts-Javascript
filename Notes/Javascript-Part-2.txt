@@ -1,0 +1,72 @@
+Javascript Part 2
+
+Curly brackets {} in JS is not a dictionary it’s an Object.  You can create Objects ‘on the fly’ using {} - in Python you have to define a Class and instantiate the class to create an object…JS is different in that you don’t have to define a Class.  Example:
+
+	var person = {
+		name: ‘Paul’
+		hello: function () {
+			console.log(‘Hello ‘ + this.name);
+		}
+	}
+
+	// example of an empty object
+
+	var person = {}
+
+If you define a variable in an Object with a space ‘ ‘ in the name you need to put the variable name in quotes (e.g. ‘favorite foods’).  When referencing the variable with a space in the name you need to put it in brackets and quotes - e.g. person[‘favorite foods’]
+
+If you get a undefined message you are likely referencing something that has not been created (this could be a result of misspelling).
+
+The ‘in’ keyword - ‘last_name in person’ returns false if the variable last_name does not exist in the Object ‘person’
+
+To delete (remove) something from an object: ‘delete person.name’ deletes the variable name from the Object ‘person’
+
+!!! Best practice !!!  Always use the ‘var’ keyword when declaring variables
+
+!!! Warning !!!  Any time you use the ‘var’ keyword to declare a variable it creates a new version of the variable within the current scope (I.e. it could override a variable at a higher scope).
+
+When using the ‘let’, it’s only valid for the block it’s in (a much narrower scope).  ‘let’ is commonly used in ‘for’ loops…for example:
+
+	for (let i = 0, i < 10, i++)  {
+		console.log(i)
+	}
+
+Using the ‘const’ keyword to define a value only lets you set the value of a variable ONCE - E.G. const PI = 3.14 <— the can’t be changed.
+
+Three types of scope:
+	1.  Global (using ‘var’)
+	2. Functional (using ‘var’ at the Function level)
+	3. Block (using ‘let’)
+
+Use ‘setTimeout’ to hold/delay processing
+
+Exercises today are geared toward passing functions around
+
+—
+
+var a = [1, 2, 3, 4]
+function times2 (n) {
+	return n * 2;
+}
+
+var double = a.map(times2); <— this results in a new array called ‘double’ with the results of applying the logic in the ‘times2’ function to each element in the array…answer is ‘double’ = [2, 4, 6, 8]
+—
+
+a.filter() loops through an array and returns an array of items that return true (used a lot in processing Big Data in a data science applictation)
+
+Slide 16:
+a.sort(function (x, y) {
+	if (x > y) { return 1 }
+	else if (x < y) { return -1 }
+	return 0;
+})
+
+—
+Adding all the contents of an array:
+
+The code below adds up all the contents of array ‘a’ using the ‘reduce’ capability of an array
+
+var a = [1, 2, 10, 6];
+a.reduce(function (x, y) {
+  return a + b;
+});
