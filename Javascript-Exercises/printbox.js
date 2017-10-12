@@ -11,12 +11,12 @@ Write function printBox which is given a width and height and prints a hollow bo
 */
 
 function printBox (width, height) {
-  /* Prepare top and bottom of the box */
+  /* Build the component used for the top and bottom of the box */
   var top_bottom = [];
   for (var x = 1; x <= width; x++) {
     top_bottom.push('*');
   }
-  /* Prepare middle section of the box */
+  /* Build the component used for the middle of the box */
   var middle = [];
   for (var x = 1; x <= width; x++) {
     if (x == 1 || x == width) {
@@ -25,13 +25,11 @@ function printBox (width, height) {
       middle.push(' ');
     }
   }
-  /* Print the top of the box */
+  /* Build the box */
   console.log(top_bottom.join(''));
-  /* Print the middle of the box */
   for (var x = 1; x <= height - 2; x++) {
     console.log(middle.join(''));
   }
-  /* Print the bottom of the box */
   console.log(top_bottom.join(''));
 }
 
