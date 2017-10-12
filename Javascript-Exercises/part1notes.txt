@@ -1,0 +1,77 @@
+Javascript Part 1
+
+!!! Use packages that are ‘LTS’
+
+To switch versions, execute command from Terminal  - nvm use 6.11.4 (where 6.11.4 is the version you want to use)
+
+To enter interactive node (like python), execute command from Terminal - node (this is referred to as Interactive Terminal)
+
+Node.js comes prepackaged with a Package Manager.  No need for virtual environments with Node.js like
+
+To install mesh - npm install -g mesh
+
+Nesh is a better version of the Interactive Terminal.  Use this instead of ‘node’
+
+Javascript does not distinguish between integer and float, there are just numbers.
+
+To clear the console - clear()
+
+Javascript will try to convert two factors being compared to the same data type then do the comparison.  For example, in JS 2 == ‘2’ returns True because JS will make them the same type then do the comparison.
+- To do the comparison WITHOUT JS converting them to be the same thing use the ‘===‘ or ‘!==‘
+
+Escape sequence - use the backslash ‘\’ before a single or double quote to include them in the output
+
+—
+The official name for Javascript is ‘ECMAScript’
+
+—
+Boolean is all lowercase in JS (where it’s capitalized in Python)
+
+—
+Lists in JS are not a native data type, it’s an Object
+
+JS doesn’t have Tuples
+
+—-
+To convert things from one type to another:
+
+- parseInt("1234");
+- parseFloat("1234.0");
+- Number('7.8');
+- var n = 123;, n.toString();
+
+—
+Indentation doesn’t matter in JS!  You use curly brackets {} to define your blocks of code.  However, for readability you want to indent your code.
+
+—
+If (age >= 21 && age <30) do something - this is the syntax for an AND condition
+If (age >= 21 || age <30) do something - this is the syntax for an OR condition
+
+—-
+A ‘for’ loop requires 3 things (for (var count=0; count < 10; count++)
+- Initialization (count=0)
+- A test (count < 10)
+- Incremental value (count++)
+
+—
+When using x.forEach to loop through an array the parameters that are passed back to you are the item in the array, the index value, and the full array in that order
+
+—
+In JS there are no keyword arguments (*args, *kwargs) like there are in Python
+
+‘Arguments’ is a key word in JS.  It’s always there and it’s always called the same thing.  You can use/reference it in your function.
+
+—
+Exercises for today
+
+To run the exercises with Node…
+
+Nano x.js where x is the name of your JS file
+
+Write some JS code while in nano
+
+To run your code:
+- Exit nano
+- On the command line in Terminal type node x.js where ‘x.js’ is the name of your JS file
+
+Again, ‘nest’ is a way to interactively execute code on a line-by-line basis.  Creating a x.js file is how you write a JS program
