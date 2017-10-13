@@ -1,0 +1,126 @@
+jQuery
+
+Takes in HTML rendered by your app and allows you to change/manipulate it before it’s displayed to the user in the browser.  It allows you to query the HTML and change the values based on CSS Selectors
+
+There are lots of plugins!  If you need to write something there may be a JQ plugin that already does it.
+
+JQ is not suited for larger applications.  It’s best for small-to-medium sized projects.
+
+Any logic that you don’t want someone to see should not be done on the front-end where it can be seen and hacked - do it on the back end instead.
+
+Navigate to jquery.com>Downloads>scroll down to jQuery with CDN, click ‘Google CDN’>copy snippet into your HTML as:
+	<script src=“insert snippet here”
+
+—
+To see all the things you can do with jQuery navigate to jquery.com>API Documentation - review this!
+
+—
+
+Tip - use CSS whenever you can then fall back to JS or jQ.  CSS is faster.
+
+‘$’ means jQuery
+‘jQuery’ means jQuery
+
+—
+Querying the DOM
+* use: $(css selector)
+* or: jQuery(css selector)
+
+jQuery uses CSS Selectors…example $(“.list”) lists the nodes with the class=“list”
+
+$(“#the-button”) lists all the nodes with id=“the-button” (Reminder: An id is only supposed to be on one thing!”)
+
+More examples of Querying the DOM:
+$('.list')
+$('.list a')
+$('#the-button')
+
+$('.list a').length
+$('.list a')[0]
+
+$('#the-button').text()
+$('.list a').text()
+
+$('#the-button').text('Click the Button')
+$('.list a').text('Click this link')
+
+$('.list a').attr('href')
+$('.list a').attr('href', 'http://example.com')
+
+$('.list a').css('color')
+$('.list a').css('color', 'red')
+
+$('.list a').hide()
+$('.list a').show()
+
+$('.list').append('<li>Another Item</li>')
+
+$('.list li').remove()
+
+$('.list li').html()
+$('.list li').html('<a href=''>another link</a>')
+
+—
+Click events:
+	<button id="the-button" onclick="alert('hello')">
+  	Click Me
+	</button>
+
+	-OR-
+
+	$('#the-button').click(function () {
+ 	 alert('hello');
+	})
+
+Using ‘this’ refers to the thing you selected:
+
+	$('#the-button').click(function () {
+ 	 $(this).text('You clicked me!');
+	})
+
+
+To override the browser doing what it does by default when something is clicked use ‘event.preventDefault();’:
+
+	$('a').click(function (event) {
+  	event.preventDefault();
+	});
+
+—
+Typing Events:
+
+Note: You get one event when a key on the keyboard is pressed (down) and another event when it’s released (up)
+
+Each key as a unique number associated with it.  See
+
+	$('textarea').keydown(function (event) {
+  	console.log('Key Down:', event.keyCode);
+	});
+
+	$('textarea').keyup(function (event) {
+  	console.log('Key Up:', event.keyCode);
+	});
+
+—
+You have to be careful where you put your code or it won’t work.  If your JS <script> code is placed before something you want to take action on it may not happen because the code being acted upon is not yet loaded.  To protect against this you can use the ‘.ready’ event…for example:
+
+	$(document).ready(function () {
+ 		 $('button').click(function () {
+    			$(this).text('You clicked me');
+  		});
+	});
+
+—
+Forms (using the <form></form> tags)
+
+<form>
+	<input id="search-form” name="search">
+</form>
+
+$('#search').val() - returns what was keyed into the search field
+$('#search').val('CatDog') - changes the value of text in the search field
+
+—
+Serialize Forms - this all form data at once instead of field by field
+
+—
+Data list can be used to display a dropdown box
