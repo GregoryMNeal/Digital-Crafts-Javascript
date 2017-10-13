@@ -13,6 +13,7 @@ function letterHistogram(word) {
   var letterDict = {};
   // iterate through the word one letter at a time
   for (var i = 0; i < word.length; i++) {
+    // see if the letter is in the dictionary
     var letter = word[i];
     if (letter in letterDict) {
       letterDict[letter] = letterDict[letter] + 1;
